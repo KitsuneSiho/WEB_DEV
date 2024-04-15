@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+  /*$(function(){
+    $('h2').filter(':even').css({
+      backgroundColor:'black',
+      color:'yellow'
+    });
+  });
+  $(function(){
+    $('h2').filter(function(index){
+      return index%2==0;}).css({
+        backgroundColor:'black',
+        color:'yellow'
+      })
+    });*/
+    $(function(){
+      $('h2').css('backgroundColor','black')
+      .filter(':even').css('color','yellow');
+    })
+</script>
+</head>
+<body>
+  <h2>JAMES</h2>
+  <h2>TOM</h2>
+  <h2>ROBERT</h2>
+<script>
+</script>
+</body>
+
+</html>

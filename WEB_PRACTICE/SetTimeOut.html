@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+  
+</script>
+</head>
+<body>
+  <img id="im" src="images/짱구.jpg" onmouseover="start(5000)"
+  onmouseout="cancel()">
+
+  <script>
+    let n=null;
+    //이미지에 마우스오버하면 5초후 naver.com으로 이동되면서
+    //이미지위에 "시작!!" 출력
+    function start(t){ 
+      n=setTimeout("load('http://www.naver.com')",t);
+      document.getElementById('im').title='시작!!';
+    }
+    function cancel(){
+      if(n!=null){
+        clearTimeout(n); //타임 중단
+      }
+    }
+    function load(url){
+      window.location=url;
+    }
+
+
+  </script>
+</body>
+
+</html>

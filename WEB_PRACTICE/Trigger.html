@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+  $(function(){
+    $('h1').click(function(){
+      $(this).html(function(idx, html){
+        return html + '♥';
+      })
+    })
+    setInterval(function(){
+      $('h1').last().trigger('click');
+    },1000);
+  })
+
+</script>
+</head>
+<body>
+  <h1>one</h1>
+  <h1>two</h1>
+<script>
+</script>
+</body>
+
+</html>

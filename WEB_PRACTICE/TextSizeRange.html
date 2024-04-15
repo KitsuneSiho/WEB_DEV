@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<head>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<style>
+body{
+display: flex;
+justify-content: center;
+
+}
+.di{
+width: 400px;
+border-radius: 5px;
+box-shadow: 0 0 30px gray;
+padding: 30px;
+}
+</style>
+</head>
+<body>
+<div class="di">
+<span class="s1">20</span>px
+<input type="range" value="20" min="0" max="100">
+<hr>
+<p>Q. 투표도장은 왜 ‘점 복(卜)' 자?<br>
+상하좌우 대칭 모양이 모두 달라 명확하게 구분할 수 있다.</p>
+</div>
+<script>
+$('input').on('input',function(){
+let n = $('input').val();
+$('.s1').text(n);
+$('p').css('font-size',n+'px');
+})
+</script>
+</body>
+</html>

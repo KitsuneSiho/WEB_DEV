@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<head>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<style>
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css");
+body{
+background-color: slategray;
+
+}
+.content {
+position: absolute;
+text-align: center;
+align-items: center;
+justify-content: center;
+margin: 10px;
+border:whitesmoke;
+background-color: azure;
+width: 400px;
+border-radius: 5px;
+left: 30%;
+top: 20%;
+padding-bottom: 10px;
+}
+.create{
+margin: 10px;
+margin-bottom: 20px;
+background-color: slateblue;
+}
+.create .todo{
+border: none;
+background-color: slateblue;
+color:white;
+padding: 10px 5px;
+}
+
+body .content h2{
+color: red;
+}
+.list .thing{
+background-color: antiquewhite;
+margin: 10px;
+padding: 10px 5px;
+border-radius: 10px;
+}
+.active{
+text-decoration: line-through;
+background-color: red;
+}
+</style>
+</head>
+<body>
+<div class="content">
+<h2>To Do List</h2>
+<div class="create">
+<input type="text" class="todo" placeholder="할 일 적고 엔터">
+</div>
+<div class="list">
+
+</div>
+</div>
+
+<script>
+$('.todo').keypress(function(event) {
+if (event.keyCode === 13) {
+$('.list').append(`<div class="thing">${$('.todo').val()} <input type="checkbox" class="check" onclick="check(this)"><i class="bi bi-basket-fill" onclick="remove(this)"></div>`)
+$('.todo').val('');
+}
+});
+
+function check(element){
+console.log('hihi');
+console.log($(element).parent().text());
+$(element).parent().css('background-color','red');
+$(element).parent().toggleClass('active');
+
+}
+function remove(element){
+console.log('hihi');
+$(element).parent().remove();
+}
+
+</script>
+</body>
+</html>
