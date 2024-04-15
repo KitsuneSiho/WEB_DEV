@@ -9,6 +9,43 @@
             content: " *";
             color: red;
         }
+        form {
+            display: flex;
+            flex-direction: column;
+            max-width: 400px; /* 필요에 따라 너비를 조정하세요 */
+            margin: 0 auto; /* 가운데 정렬을 위해 */
+        }
+
+        label {
+            margin-bottom: 5px; /* 라벨 사이의 간격을 조절합니다. */
+        }
+
+        input[type="text"],
+        input[type="password"],
+        input[type="radio"],
+        select {
+            margin-bottom: 10px; /* 입력 필드 사이의 간격을 조절합니다. */
+            padding: 5px; /* 입력 필드의 여백을 추가합니다. */
+            width: 100%; /* 입력 필드의 너비를 100%로 설정하여 부모 요소의 너비에 맞춥니다. */
+            box-sizing: border-box; /* 입력 필드의 너비에 패딩과 테두리를 포함시킵니다. */
+        }       
+
+        input[type="submit"], input[type="reset"], 
+        input[type="button"]{
+            margin-top: 10px; /* 버튼 위의 여백을 추가합니다. */
+            padding: 8px 15px; /* 버튼의 여백을 설정합니다. */
+            cursor: pointer; /* 커서를 포인터로 변경하여 사용자에게 버튼이 클릭 가능함을 보여줍니다. */
+            background-color: #4CAF50; /* 버튼의 배경색을 설정합니다. */
+            color: white; /* 버튼 텍스트의 색상을 설정합니다. */
+            border: none; /* 버튼의 테두리를 없앱니다. */
+            border-radius: 5px; /* 버튼의 모서리를 둥글게 만듭니다. */
+        }
+
+
+        input[type="submit"]:hover, input[type="reset"]:hover,
+        input[type="button"]:hover {
+            background-color: #45a049; /* 버튼에 호버 효과를 추가하여 배경색을 변경합니다. */
+        }
     </style>
     <script>
         function validateForm() {
@@ -25,17 +62,17 @@
             var address2 = document.getElementById('address2').value;
             var phone = document.getElementById('phone').value;
 
-            // 직업과 메일 수신 여부 필드 가져오기
+            //직업과 메일 수신 여부 필드 가져오기
             var job = document.getElementById('job').value;
             var receiveMail = document.querySelector('input[name="receive"]:checked');
 
-            // 아이디는 네글자 이상이어야 함
+            //아이디는 네글자 이상이어야 함
             if (id.length < 4) {
                 alert('아이디는 네글자 이상이어야 합니다.');
                 return false;
             }
 
-            // 우편번호는 -를 포함해서 입력해야 함
+            //우편번호는 -를 포함해서 입력해야 함
             if (zipcode.indexOf('-') === -1) {
                 alert('우편번호는 -를 포함해서 입력해야 합니다.');
                 return false;
@@ -78,7 +115,7 @@
         <input type="radio" name="receive" value="수신" checked> 수신
         <input type="radio" name="receive" value="수신거부"> 수신거부<br>
         <input type="submit" value="회원가입">
-        <input type="button" value="취소" onclick="window.location.href='cancel.html'">
+        <input type="reset" value="취소">
     </form>
 </body>
 </html>
