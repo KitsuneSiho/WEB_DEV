@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<head>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<style>
+  .di{
+    background-color: rgb(230, 230, 230);
+    padding:30px;
+  }
+  .di .di2{
+    display: flex;
+  }
+  .di h2{
+    text-align: center;
+  }
+  .di3{
+    background-color: whitesmoke;
+    width: 300px;
+    padding: 10px;
+    margin-right: 10px;
+  }
+  body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .di4{
+    display: flex;
+    align-items: center;
+  }
+  .di4 label{
+    background-color: tomato;
+    color:white;
+    padding:10px 20px;
+  }
+  .di4 #up{
+    display: none;
+  }
+
+</style>
+</head>
+<body>
+  <div class="di">
+    <h2>File Upload</h2>
+    <div class="di2">
+      <div class="di3">test.png</div>
+      <div class="di4">
+        <label for="up">Upload</label>
+        <input type="file" id="up">
+     </div>
+  </div>
+</div>
+<script>
+  $('#up').change(function(e){
+    let n=e.target.files[0].name
+    $('.di3').text(n);
+  });
+
+</script>
+</body>
+</html>
