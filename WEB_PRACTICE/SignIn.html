@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입</title>
+    <style>
+        .required-label::after {
+            content: " *";
+            color: red;
+        }
+    </style>
+    <script>
+        function validateForm() {
+            //이름, 주민번호, 아이디, 비밀번호, 비밀번호 확인, 이메일, 우편번호, 주소, 핸드폰 번호 필드 가져오기
+            var name = document.getElementById('name').value;
+            var s_num_f = document.getElementById('s_num_f').value;
+            var s_num_l = document.getElementById('s_num_l').value;
+            var id = document.getElementById('id').value;
+            var password = document.getElementById('password').value;
+            var confirmPassword = document.getElementById('confirmPassword').value;
+            var email = document.getElementById('email').value;
+            var zipcode = document.getElementById('zipcode').value;
+            var address1 = document.getElementById('address1').value;
+            var address2 = document.getElementById('address2').value;
+            var phone = document.getElementById('phone').value;
+
+            // 직업과 메일 수신 여부 필드 가져오기
+            var job = document.getElementById('job').value;
+            var receiveMail = document.querySelector('input[name="receive"]:checked');
+
+            // 아이디는 네글자 이상이어야 함
+            if (id.length < 4) {
+                alert('아이디는 네글자 이상이어야 합니다.');
+                return false;
+            }
+
+            // 우편번호는 -를 포함해서 입력해야 함
+            if (zipcode.indexOf('-') === -1) {
+                alert('우편번호는 -를 포함해서 입력해야 합니다.');
+                return false;
+            }
+
+            //비밀번호와 비밀번호 확인 값이 같아야 함
+            if (password !== confirmPassword) {
+                alert('비밀번호와 비밀번호 확인 값이 일치하지 않습니다.');
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <form action="b.html" onsubmit="return validateForm()">
+        <label for="name" class="required-label">이름</label><input type="text" id="name"><br>
+        <label for="s_num_f" class="required-label">주민번호</label><input type="text" id="s_num_f"> - <input type="text" id="s_num_l"><br>
+        <label for="id" class="required-label">아이디</label><input type="text" id="id"><br>
+        <label for="password" class="required-label">비밀번호</label><input type="password" id="password"><br>
+        <label for="confirmPassword" class="required-label">비밀번호 확인</label><input type="password" id="confirmPassword"><br>
+        이메일 <input type="text" id="email"> @
+        <select>
+            <option>naver.com</option>
+            <option>gmail.com</option>
+            <option>kakao.com</option>
+            <option>outlook.com</option>
+            <option><input type="text" value="직접입력"></option>
+        </select><br>
+        우편번호 <input type="text" id="zipcode"><br>
+        주소 <input type="text" id="address1"> <input type="text" id="address2"><br>
+        핸드폰 번호 <input type="text" id="phone"><br>
+        직업 
+        <select id="job">
+            <option value="학생">학생</option>
+            <option value="컴퓨터">컴퓨터/인터넷</option>
+            <option value="언론">언론</option>
+        </select><br>
+        메일/SMS 정보수신 
+        <input type="radio" name="receive" value="수신" checked> 수신
+        <input type="radio" name="receive" value="수신거부"> 수신거부<br>
+        <input type="submit" value="회원가입">
+        <input type="button" value="취소" onclick="window.location.href='cancel.html'">
+    </form>
+</body>
+</html>
