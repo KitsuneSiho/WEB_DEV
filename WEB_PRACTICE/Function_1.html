@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+ <style>
+ </style>
+</head>
+<body>
+    <script>
+      //함수: 목적있는 작업을 수행하도록 설계된 독립된 모듈
+      /*function cal(a,b){
+        return (a+b)*2;
+      }
+      const n=cal(1,2);
+      const n2=cal(2,3);*/
+    ////////////////////////////////////////////////////
+    //익명함수: 함수를 변수처럼 사용하는 익명함수
+      const cal = function(a,b){
+        return (a+b)*2;
+      }
+      document.write(cal(1,2) +"<br>");
+////////////////////////////////////////////
+
+      function func(a){
+        return a+3;
+      }
+      const func3=a=>a+3;
+
+      const func2=()=>{
+        console.log('hi');
+        return a+3;
+      }
+      const func4=()=>console.log('hi');
+
+      let n=()=>alert('hi');
+      
+      let n2=(a,b)=>{
+        let msg=`${a}, ${b}`;
+        return msg;
+      }
+      document.write(n2(3,4));
+
+    </script>
+</body>
+</html>

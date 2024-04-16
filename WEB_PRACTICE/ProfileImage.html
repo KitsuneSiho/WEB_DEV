@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+ <style>
+  body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .profile{
+    background-color: whitesmoke;
+    width: 300px;
+    text-align: center;
+    padding: 30px;
+    box-shadow: 0 0 15px gainsboro;
+  }
+  .profile h3{
+    text-transform: capitalize;
+  }
+  .photo-upload input[type=file]{
+    display: none;
+  }
+  .photo-upload label{
+    background-color: tomato;
+    color: white;
+    display: block;
+    padding: 10px;
+  }
+  .profile-photo img{
+    width: 200px;
+    border-radius: 50%;
+  }
+  .photo-upload{
+    margin-top: 20px;
+  }
+ 
+ </style>
+</head>
+<body>
+  <body>
+    <div class="profile">
+      <h3>upload profile</h3>
+      <div class="profile-photo">
+        <img src="images/empty.jpg">
+      </div>
+      <div class="photo-upload">
+        <label for="upload">Upload Photo</label>
+        <input type="file" id="upload">
+      </div>
+    </div>
+    <script>
+      $('#upload').change(function(e){
+        let n=URL.createObjectURL(e.target.files[0]);
+        $('.profile-photo img').attr('src',n);
+
+      })
+    </script>
+</body>
+</html>
