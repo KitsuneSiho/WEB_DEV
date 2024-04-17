@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <script>
+    let win=null;
+    function on(){
+      win=window.open("","a","width=300,height=200");
+      let n=document.getElementById('t');
+      win.document.write(n.value);  //새창에 내가 쓴 값 출력
+      win.document.close();
+    }
+  </script>
+</head>
+<body>
+  <textarea id="t" rows="10" cols="50"></textarea>
+  <button onclick="on()">출력</button>
+  <script>
+    //textarea에 값을 입력하고 출력버튼을 누르면 내가 쓴 값이 새 창에 뜬다 
+  </script>
+
+</body>
+</html>

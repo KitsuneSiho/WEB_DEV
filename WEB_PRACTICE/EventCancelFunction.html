@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<head>
+	<script>
+   function on(){
+    let n=confirm('네이버로 이동할거야?');
+    return n; //취소: false 확인: true
+   }
+   function no(e){ 
+    e.preventDefault();  //이벤트 디폴트 행동 강제 취소
+   }
+	</script>
+</head>
+<body>   
+  <a href="http://www.naver.com" onclick="return on()">네이버</a><br>
+  <form>
+    <input type="checkbox">아아<br>
+    <input type="checkbox" onclick="no(event)">따아(no check)
+  </form>
+</body>
+<script>
+	
+</script>
+</html>

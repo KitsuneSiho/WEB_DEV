@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<head>
+	<script>
+    let n;
+    function on(){
+      n=document.getElementById('p');
+      n.addEventListener('mouseover',fun);
+      n.addEventListener('mouseout',fun2);
+    }
+    function fun(){
+      n.style.backgroundColor='violet';
+    }
+    function fun2(){
+      n.style.backgroundColor='white';
+    }
+	</script>
+</head>
+<body onload="on()">          <!--addEventListener-->
+  <p id="p">마우스 올려봐</p>  <!--마우스를 올리면 violet색으로 변경 mouseover-->
+                               <!--마우스 벗어나면 white색         mouseout-->
+</body>
+<script>
+	
+</script>
+</html>

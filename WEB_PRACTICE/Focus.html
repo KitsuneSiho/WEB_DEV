@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<head>
+	<script>
+    function ch(obj){
+      if(obj.value==""){
+        alert('이름입력해야해');
+        obj.focus();
+      }
+    }
+	</script>
+</head>
+<body onload="document.getElementById('name').focus()">   <!--이름에 포커스 설정-->
+  <form>
+    이름 <input type="text" id="name" onblur="ch(this)"> <!--포커스 벗어나면 ch함수 실행-->
+    <p>
+      학번 <input type="text">
+    </p>
+  </form>
+</body>
+<script>
+	
+</script>
+</html>
