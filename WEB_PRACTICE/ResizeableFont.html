@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        /* HR 태그 스타일 */
+        hr {
+            border: none;
+            border-top: 3px solid orange; /* 주황색 선의 두께와 색상 */
+            width: 50px; /* 선의 너비 */
+            margin: 20px 0; /* 위아래 여백 */
+            text-align: left; /* 선을 왼쪽에 정렬 */
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+</head>
+<body>
+    <div class="btn-container">
+        <button id="small">가</button>
+        <button id="medium">가</button>
+        <button id="large">가</button>
+    </div>
+
+    <h2>웹개발자의 분류</h2>
+    <hr>
+    <p>웹퍼블리셔(ui개발자), 개발자(서버개발자): HTML 중심이거나, 서버사이드가 감싸는 웹 구조의 형태를 지향하는 업무 스타일의 직군으로서 웹퍼블리셔는 사용자에게 보여지는 인터페이스 영역을 작업하고, 개발자는 데이터의 비지니스 로직을 전반으로 담당한다. 웹퍼블리셔는 해외에서는 UI개발자로 불린다.<br>
+    <br>프론트엔드, 백엔드 개발자: 프론트엔드 개발자는 백엔드 API에서 가져온 데이터의 출력, 입력을 통한 비지니스 로직 구성과 사용자와 대화하는 사용자 인터페이스 부분을 작업하는 개발자를 말한다. 분별하기 헷갈리는 직종으로 웹퍼블리셔가 있는데, 웹퍼블리셔는 html 중심이거나, 서버사이드가 감싸는 구조 형태의 웹을 지향하는 웹퍼블리셔와 개발자의 업무 스타일의 직군으로서 웹표준 반응형웹과 UI를 만드는 디자인 쪽에 가깝고, 클라이언드 사이드 영역이기도 하지만, 프론트 엔드 개발자는 프론트엔드, 백엔드의 완전한 분리 구조를 지향하는 업무스타일의 직군으로서 웹퍼블리셔와 같이 인터페이스의 디자인 관점도 있지만, 웹퍼블리셔와 달리 컴포넌트 아키텍쳐를 지향하며, 이벤트나 서버와 API 통신해서 로직을 어떻게 푸는 관점을 중시한다. 백엔드 개발자도 기존 개발자와 스펙이 조금 다르고, 백엔드의 뷰는 화면개발이 아닌 API 개발이고, 백엔드 인증 처리도 따로 알아야 하며, 데이터베이스 분석과 API서버를 개발한다. 프론트엔드에서 전달된 데이터의 포맷이나 데이터베이스 입출력 및 다양한 비즈니스 프로세스를 프로그래밍 코드로 구현하는 역할을 한다. 데이터베이스, 웹서버, 네트워킹 등 웹 서버의 인프라에 대한 이해가 필요하다. 웹퍼블리셔와 개발자로 나뉜 방식은 모든 호출을 서버에서 가져와야 했고, 컴포넌트화가 안되었지만, 프론트엔드와 백엔드로 나뉜 개발방식은 서버의 컴퓨터와 사용자 컴퓨터가 http통신으로 데이터만 교환하고 완전히 분리구조를 지향한다.</p>
+ 
+    <h2>웹 개발자가 주로 작업하는 환경</h2>
+    <hr>
+    <p>운영 체제: 윈도, 유닉스, 리눅스<br>
+
+        클라이언트 측면 언어: HTML, CSS, Javascript, XML ,XHTML
+        
+        <br>클라이언트 측면 js 프레임워크: jQuery, dojo , prototype, YUI, Jindo
+        
+        <br>클라이언트 측면 ui 프레임워크: jQuery UI, fontawesome, bootstrap
+        
+        <br>서버 측면 언어 : JAVA, Node.js, C#(ASP.NET), PHP, JSP, VB 스크립트(ASP), Python 펄, Ruby on Rails, grail
+        
+        <br>프레임워크 : J2EE, ASP.NET MVC, ASP.NET Webform, Struts, Spring, ibatis , hibernate , gwt ,spring roo, sitemesh , oscache, tiles
+        
+        <br>데이터베이스 : Oracle, MS SQL, Mysql, Postgres
+        
+        <br>버전 관리 : WinCVS, TotoiseCVS, Subversion, Rational ClearCase, git
+        
+        <br>웹 서버 : Nginx, Apache, Tomcat, JBoss, WAS, Bea Logic, IIS , jetty
+        
+        <br>도구 : 이클립스, WASD, Editplus, Oracle Developer, 메모장, Notepad++, Putty, FTP 클라이언트, Zend Studio, Brackets, 비주얼 스튜디오</p>
+
+    <script>
+        $(document).ready(function(){
+            $('#small').click(function(){
+                $('body').css('font-size', '1em');
+            });
+
+            $('#medium').click(function(){
+                $('body').css('font-size', '1.2em');
+            });
+
+            $('#large').click(function(){
+                $('body').css('font-size', '1.3em');
+            });
+        });
+    </script>
+</body>
+</html>

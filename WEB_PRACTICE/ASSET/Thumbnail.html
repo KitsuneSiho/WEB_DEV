@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <style>
+    body {
+      width: 110vw;
+      height: 110vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .px {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .showBox {
+      width: 700px;
+      height: 700px;
+      margin: 10px 0;
+      overflow: hidden; /* 이미지가 showBox를 벗어나지 않도록 설정 */
+    }
+    .pic {
+      width: 140px;
+      height: 140px;
+    }
+  </style>
+</head>
+<body>
+  <div class="px">
+    <div class="showBox"></div>
+    <div class="imageBox">
+      <img src="dog.jpg" class="pic pic1" />
+      <img src="fox.jpg" class="pic pic2" />
+      <img src="rabbit.jpg" class="pic pic3" />
+      <img src="rat.jpg" class="pic pic4" />
+    </div>
+  </div>
+</body>
+<script>
+  $(".pic").click(function () {
+    let url = $(this).attr("src");
+    $(".showBox").css({ background: "url('" + url + "')", 'background-size': 'cover' }); // 배경 이미지 크기를 조정하여 이미지가 showBox에 꽉 차도록 설정
+  });
+</script>
+</html>
